@@ -10,8 +10,15 @@
   </head>
 
   <body>
+    <h2><%= "Current user is #{@current_user.email}" if @current_user.present? %></h2>
     <nav>
-    
+      <% if @current_user.present? %>
+        <%= link_to 'Users', admin_path if @current_user.admin? %>
+        <%= link_to 'Sign Out', users_login_path, :method => 'delete' %>
+      <% else %>
+        <%= link_to "Sign up", new_user_path %>
+        <%= link_to 'Sign in', users_login_path %>
+      <% end %>
     </nav>
     <%= yield %>
   </body>
