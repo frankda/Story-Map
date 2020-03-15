@@ -7,19 +7,41 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/605919a6c4.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <h2><%= "Current user is #{@current_user.email}" if @current_user.present? %></h2>
-    <nav>
-      <% if @current_user.present? %>
-        <%= link_to 'Users', admin_path if @current_user.admin? %>
-        <%= link_to 'Sign Out', login_path, :method => 'delete' %>
-      <% else %>
-        <%= link_to "Sign up", signup_path %>
-        <%= link_to 'Sign in', login_path %>
-      <% end %>
-    </nav>
-    <%= yield %>
+ 
+    <div class="container">
+     
+      <header>
+        <nav class="navbar justify-content-between">
+          <%= link_to root_path, :class => 'navbar-brand' do %>
+              <%= image_tag 'logodark.JPG', :height => '55rem' %>
+          <% end %>
+          
+          <div class="user-info">
+            <% if @current_user.present? %>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-user-circle"></i>
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <%= @current_user.email %>
+                    <%= link_to 'Sign Out', login_path, :method => 'delete' %>
+                </div>
+              </div>
+            <% else %>
+                <% unless current_page?(login_path) %>
+                  <%= link_to 'Sign in', login_path %>
+                <% end %>
+            <% end %>
+          </div>
+        </nav>
+      </header>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
