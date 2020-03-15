@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
 
   get '/admin' => 'users#admin'
+
+  #map
+  get '/storymap' => 'map#map_page'
 end
