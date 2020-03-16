@@ -3,4 +3,8 @@ class MapController < ApplicationController
         
     end
     
+    def create_favorite_location
+        
+    end
+    
 end

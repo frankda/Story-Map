@@ -36,3 +36,20 @@
  #mapid { 
      height: 100%; 
 }
+
+// Map css
+#create-marker {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+#create-marker:hover {
+    text-decoration: none;
+}
+
+#create-favorite {
+    display: block;
+    cursor: pointer
+}

@@ -21,7 +21,7 @@ $(document).ready(function(){
     function onMapClick(e) {
         popup
         .setLatLng(e.latlng)
-        .setContent('<p>I am a standalone popup.</p>')
+        .setContent('<p id="create-marker" href="#close">+ Create story</p><p id="create-favorite">+ Add favorite</p>')
         .openOn(mymap);
     }
     

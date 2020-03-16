@@ -16,3 +16,32 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+
+
+// $(document).ready(function(){
+//     MutationObserver = window.MutationObserver;
+//     var observer = new MutationObserver(function(mutations, observer) {
+//     // fired when a mutation occurs
+//         $('#create-favorite').on('click', function(){
+//             alert('working');
+//         });
+//     // ...
+// });
+
+// observer.observe(document, {
+//     subtree: true,
+//     childList: true,
+//     //...
+//   });
+// })
+
+$(document).ready(function(){
+    a = document.querySelector('body')
+    a.addEventListener('DOMSubtreeModified', function(){
+        $('#create-favorite').on('click', function(){
+            alert('working');
+        });
+    });
+});
