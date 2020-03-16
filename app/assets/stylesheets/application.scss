@@ -14,8 +14,25 @@
  */
  @import "bootstrap";
 
+ body > div.container-fluid {
+     height: 100vh;
+     padding-top: 5rem;
+ }
+
+ header {
+     height: 5rem;
+     margin-top: -5rem;
+ }
+
  form > .form-group > h3 {
      margin-bottom: 2rem;
  }
 
- #mapid { height: 180px; }
+.main {
+    height: 100%;
+    width: 70vw;
+}
+
+ #mapid { 
+     height: 100%; 
+}
