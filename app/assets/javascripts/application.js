@@ -35,7 +35,7 @@
 //    });
 // });
 
-var current_location = [];
+let current_location;
 
 $(document).ready(function(){
    $('body').on('click', '#create-favorite', function(){
