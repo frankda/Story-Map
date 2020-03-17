@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
     end
     
     def create
-        @comment = Comment.new
-
+        @comment = Comment.new comment_params
+        @current_user.comments << @comment
         respond_to do |format|
             if @comment.save
                 format.js
