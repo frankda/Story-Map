@@ -17,31 +17,28 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-
-
+// Add user favorite location
 
 // $(document).ready(function(){
-//     MutationObserver = window.MutationObserver;
-//     var observer = new MutationObserver(function(mutations, observer) {
-//     // fired when a mutation occurs
-//         $('#create-favorite').on('click', function(){
-//             alert('working');
-//         });
-//     // ...
+//    $('body').on('click', '#create-favorite', function(){
+//     $.ajax({
+//         url: '/user/favorite_location',  // Try to use rails path
+//         type: 'POST',
+//         data: 'test',
+//         success: function(r){
+//             window.alert('success');
+//         },
+//         error: function(r){
+//             window.alert('fail');
+//         }
+//     });
+//    });
 // });
 
-// observer.observe(document, {
-//     subtree: true,
-//     childList: true,
-//     //...
-//   });
-// })
+let current_location;
 
 $(document).ready(function(){
-    a = document.querySelector('body')
-    a.addEventListener('DOMSubtreeModified', function(){
-        $('#create-favorite').on('click', function(){
-            alert('working');
-        });
-    });
+   $('body').on('click', '#create-favorite', function(){
+    L.marker([current_location[0], current_location[1]]).addTo(mymap);
+   });
 });

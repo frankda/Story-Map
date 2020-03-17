@@ -28,16 +28,23 @@
      margin-bottom: 2rem;
  }
 
+// Map css
 .main {
     height: 100%;
-    width: 70vw;
+    width: 100%;
+    display: flex;
 }
 
- #mapid { 
-     height: 100%; 
+.map-area{
+    height: 100%;
+    width: 100%;
 }
 
-// Map css
+#mapid {
+    height: 100%;
+    width: 100%;
+}
+
 #create-marker {
     cursor: pointer;
     color: black;
@@ -52,4 +59,13 @@
 #create-favorite {
     display: block;
     cursor: pointer
+}
+
+// Submit form
+.story-form {
+    background-color: red;
+}
+
+.side-form {
+    width: 0;
 }
