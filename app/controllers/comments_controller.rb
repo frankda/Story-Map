@@ -5,7 +5,9 @@ class CommentsController < ApplicationController
     
     def create
         @comment = Comment.new comment_params
+        @location = Location.create location_params
         @current_user.comments << @comment
+        @location.comments << @comment
         respond_to do |format|
             if @comment.save
                 format.js
@@ -21,4 +23,7 @@ class CommentsController < ApplicationController
         params.require(:comment).permit(:content)
     end
     
+    def location_params
+        params.require(:comment).permit(:lat, :lng)
+    end
 end

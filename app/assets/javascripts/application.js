@@ -38,7 +38,16 @@
 let current_location;
 
 $(document).ready(function(){
+    // If any element with id "create-favorite" appears in dom tree, bind onclick function to it
    $('body').on('click', '#create-favorite', function(){
     L.marker([current_location[0], current_location[1]]).addTo(mymap);
+   });
+
+   // Allow pop up close btn to hide form (bug here)
+   $('body').on('click', '.leaflet-popup-close-button', function(){
+    window.alert('success');
+    if ($('.story-form').is('form')){
+        $('.map-area').animate({'width': '100%'}, 300);
+    };
    });
 });

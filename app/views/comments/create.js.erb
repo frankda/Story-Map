@@ -1,3 +1,6 @@
+// Remove side form after user submit, and add a slide out animation to this form
 $('.story-form').remove();
 $('.map-area').animate({'width': '100%'}, 300);
-createMarkerWithPopUp(current_location[0], current_location[1], 'success')
+
+// Show user created comments in map pin
+createMarkerWithPopUp(current_location[0], current_location[1], '<%= @comment.content %> by <%= @comment.user.email %> ')
