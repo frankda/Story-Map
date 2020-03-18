@@ -42,9 +42,4 @@ $(document).ready(function(){
    $('body').on('click', '#create-favorite', function(){
     L.marker([current_location[0], current_location[1]]).addTo(mymap);
    });
-
-   // Allow pop up close btn to hide form (bug here)
-   $('body').on('click', '.leaflet-popup-close-button', function(){
-    window.alert('success');
-   });
 });

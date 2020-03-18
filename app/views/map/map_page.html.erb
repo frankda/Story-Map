@@ -42,6 +42,16 @@
         let y = e.latlng.lng;
         console.log(x, y);
         
+        // Allow pop up close btn to hide form (bug here)
+        popup
+        .on('remove', function(){
+            if ($('.story-form').is('form')){
+                $('.side-form').empty();
+                $('.map-area').animate({'width': '100%'}, 300);
+                $('.side-form').animate({'width': '0'}, 300)
+            };
+        });
+
         popup
         .setLatLng(e.latlng)
         .setContent('<%= link_to '+ Create story', comments_path, :id => "create-story", remote: true %><p id="create-favorite">+ Add favorite</p>')

@@ -1,13 +1,16 @@
+<h3 class="text-center">Create Your Story</h3>
+
+<hr>
 
 <%= form_with model: @comment, :class => "story-form" do |f| %>
     <div class="form-group">
-        <%= f.label :content, "Leave your comments here" %>
-        <%= f.text_field :content %>
+        <%= f.label :content, "Story" %>
+        <%= f.text_field :content, :required => true, class: 'form-control' %>
     </div>
     
     <%= f.hidden_field :lat %>
 
     <%= f.hidden_field :lng %>
 
-    <%= f.submit  %>
+    <%= f.submit 'Add to map', :class => 'btn btn-primary text' %>
 <% end %>
