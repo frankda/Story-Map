@@ -46,8 +46,5 @@ $(document).ready(function(){
    // Allow pop up close btn to hide form (bug here)
    $('body').on('click', '.leaflet-popup-close-button', function(){
     window.alert('success');
-    if ($('.story-form').is('form')){
-        $('.map-area').animate({'width': '100%'}, 300);
-    };
    });
 });
