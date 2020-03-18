@@ -51,13 +51,15 @@
                 $('.side-form').animate({'width': '0'}, 300)
             };
         });
-
+        
+        // Add a popup on location where clicked
         popup
         .setLatLng(e.latlng)
         .setContent('<%= link_to '+ Create story', comments_path, :id => "create-story", remote: true %><p id="create-favorite">+ Add favorite</p>')
         .openOn(mymap);
-        return current_location = [x, y]
-    }
+        return current_location = [x, y];
+    };
+
     
     mymap.on('click', onMapClick);
 </script>
