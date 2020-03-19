@@ -2,3 +2,12 @@
 $('.side-form').append("<%= escape_javascript render 'edit_form' %>");
 $('.map-area').animate({'width': '70%'}, 300);
 $('.side-form').animate({'width': '30%'}, 300);
+
+// Remove popup and close form
+markers[<%= @comment.id %>]._popup.on('remove', function(){
+            if ($('.story-form').is('form')){
+                $('.side-form').empty();
+                $('.map-area').animate({'width': '100%'}, 300);
+                $('.side-form').animate({'width': '0'}, 300)
+            };
+        });

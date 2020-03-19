@@ -3,6 +3,5 @@ $('.side-form').empty();
 $('.map-area').animate({'width': '100%'}, 300);
 $('.side-form').animate({'width': '0%'}, 300)
 
-
-// Show user created comments in map pin
-createMarkerWithPopUp(current_location[0], current_location[1], '<%= @comment.content %> by <%= @comment.user.email %> ')
+// Change marker's popup content after editing
+markers[<%= @comment.id %>].bindPopup(`<p><%= @comment.content %></p><%= link_to 'Edit', edit_comment_path(@comment), remote: true %>`)

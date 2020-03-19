@@ -24,7 +24,13 @@ class CommentsController < ApplicationController
     end
     
     def update
-        
+        comment = Comment.find params[:id]
+        comment = comment.update comment_params
+        @comment = Comment.find params[:id]
+        respond_to do |format|
+            format.js
+            format.html { redirect_to storymap_path }
+        end
     end
     
     private
