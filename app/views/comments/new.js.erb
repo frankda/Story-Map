@@ -3,5 +3,6 @@ $('.side-form').append("<%= escape_javascript render 'form' %>");
 $('.map-area').animate({'width': '70%'}, 300);
 $('.side-form').animate({'width': '30%'}, 300);
 
+// Put location latitude and longtitude into form's hidden input
 $('#comment_lat').val(current_location[0]);
 $('#comment_lng').val(current_location[1]);

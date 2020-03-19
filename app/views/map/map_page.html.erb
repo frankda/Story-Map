@@ -60,6 +60,14 @@
         return current_location = [x, y];
     };
 
+    function showCurrentUserMarks () {
+        <% @current_user.comments.each do |comment| %>
+            createMarkerWithPopUp (<%= comment.location.lat %>, <%= comment.location.lng %>, `<p><%= comment.content %></p><%= link_to 'Edit', edit_comment_path(comment), remote: true %>`)
+        <% end %>
+    };
+
+    showCurrentUserMarks();
     
     mymap.on('click', onMapClick);
 </script>
+
