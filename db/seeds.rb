@@ -7,4 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Comment.destroy_all
+Location.destroy_all
 User.create :email => 'frank_da@outlook.com', :password => 'chicken', :admin => true
