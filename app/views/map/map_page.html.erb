@@ -63,9 +63,11 @@
     };
 
     function clearExistingMarkers() {
-        <% Comment.all.each do |comment| %>
-            mymap.removeLayer(markers[<%= comment.id %>]);
-        <% end %>
+        for (let i = 0; i < markers.length; i++) {
+            if (markers[i]!=undefined) {
+                mymap.removeLayer(markers[i])
+            };
+        };
     };
 
     function showCurrentUserMarks () {

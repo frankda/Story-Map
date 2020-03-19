@@ -1,3 +1,4 @@
+clearExistingMarkers()
 <% @comments.each do |comment| %>
     createMarkerWithPopUp (<%= comment.location.lat %>, <%= comment.location.lng %>, `<p><%= comment.content %></p><p>by <%= comment.user.email %></p><%= link_to 'Edit', edit_comment_path(comment), remote: true %>`, <%= comment.id %>)
 <% end %>
