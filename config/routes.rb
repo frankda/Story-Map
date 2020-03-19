@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   post '/comments' => 'comments#create', :as => 'new_comment'
   get '/comments/:id/edit' => 'comments#edit', :as => 'edit_comment'
   patch '/comments/:id' => 'comments#update', :as => 'update'
-  delete '/comments/:id' => 'comments#destroy'
+  delete '/comments/:id' => 'comments#destroy', :as => 'destroy'
 end

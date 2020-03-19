@@ -13,5 +13,5 @@
     <%= f.hidden_field :lng %>
 
     <%= f.submit 'Change', :class => 'btn btn-primary text' %>
-
+    <%= button_to "Delete", destroy_path(@comment), :class => 'btn btn-danger', :method => 'delete' %>
 <% end %>

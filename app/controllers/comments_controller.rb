@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
         respond_to do |format|
             if @comment.save
                 format.js
-                format.html { redirect_to storymap_path }
+                # format.html { redirect_to storymap_path }
             else
                 format.html { render :new }
             end
@@ -25,11 +25,20 @@ class CommentsController < ApplicationController
     
     def update
         comment = Comment.find params[:id]
-        comment = comment.update comment_params
+        comment.update comment_params
         @comment = Comment.find params[:id]
         respond_to do |format|
             format.js
-            format.html { redirect_to storymap_path }
+            # format.html { redirect_to storymap_path }
+        end
+    end
+    
+    def destroy
+        comment = Comment.find params[:id]
+        @comment_id = comment.id
+        comment.destroy
+        respond_to do |format|
+            format.js
         end
     end
     
