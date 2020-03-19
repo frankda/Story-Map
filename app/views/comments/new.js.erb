@@ -1,7 +1,9 @@
 // Add a form for user to create comments after user click popup on map and add animation of slide in effect
-$('.side-form').append("<%= escape_javascript render 'form' %>");
-$('.map-area').animate({'width': '70%'}, 300);
-$('.side-form').animate({'width': '30%'}, 300);
+if (!$('.story-form').is('form')){
+    $('.side-form').append("<%= escape_javascript render 'form' %>");
+    $('.map-area').animate({'width': '70%'}, 300);
+    $('.side-form').animate({'width': '30%'}, 300);
+}
 
 // Put location latitude and longtitude into form's hidden input
 $('#comment_lat').val(current_location[0]);

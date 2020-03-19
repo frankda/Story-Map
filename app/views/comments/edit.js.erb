@@ -1,7 +1,9 @@
 // Add a form for user to create comments after user click popup on map and add animation of slide in effect
+if (!$('.story-form').is('form')){
 $('.side-form').append("<%= escape_javascript render 'edit_form' %>");
 $('.map-area').animate({'width': '70%'}, 300);
 $('.side-form').animate({'width': '30%'}, 300);
+}
 
 // Remove popup and close form
 markers[<%= @comment.id %>]._popup.on('remove', function(){
