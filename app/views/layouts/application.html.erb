@@ -27,9 +27,10 @@
               <%= image_tag 'logodark.JPG', :height => '55rem' %>
           <% end %>
           
-          <p id="show-current-user" class="btn btn-outline-primary">Show current user</p>
-
-          <%= link_to 'Show all users', marker_path, :class => 'btn btn-outline-primary', :remote => true %>
+          <% if current_page?(storymap_path) %>
+            <p id="show-current-user" class="btn btn-outline-primary">Show current user</p>
+            <%= link_to 'Show all users', marker_path, :class => 'btn btn-outline-primary', :remote => true %>
+          <% end %>
 
           <div class="user-info">
             <% if @current_user.present? %>
