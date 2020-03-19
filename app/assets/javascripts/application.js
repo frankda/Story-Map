@@ -42,4 +42,14 @@ $(document).ready(function(){
    $('body').on('click', '#create-favorite', function(){
     L.marker([current_location[0], current_location[1]]).addTo(mymap);
    });
+
+   // bind event for navigation buttons
+   $('#show-current-user').on('click',function(){
+    clearExistingMarkers();
+    showCurrentUserMarks()
+   });
+   $('#show-all-user').on('click', function(){
+    clearExistingMarkers();
+    showAllUsersMarks();
+   });
 });

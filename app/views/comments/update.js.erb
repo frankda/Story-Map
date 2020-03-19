@@ -4,4 +4,4 @@ $('.map-area').animate({'width': '100%'}, 300);
 $('.side-form').animate({'width': '0%'}, 300)
 
 // Change marker's popup content after editing
-markers[<%= @comment.id %>].bindPopup(`<p><%= @comment.content %></p><%= link_to 'Edit', edit_comment_path(@comment), remote: true %>`)
+markers[<%= @comment.id %>].bindPopup(`<p><%= @comment.content %></p><p>edited by <%= @current_user.email %></p><%= link_to 'Edit', edit_comment_path(@comment), remote: true %>`)

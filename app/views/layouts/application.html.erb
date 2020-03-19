@@ -22,10 +22,15 @@
      
       <header>
         <nav class="navbar justify-content-between">
+
           <%= link_to root_path, :class => 'navbar-brand' do %>
               <%= image_tag 'logodark.JPG', :height => '55rem' %>
           <% end %>
           
+          <p id="show-current-user" class="btn btn-outline-primary">Show current user</p>
+
+          <%= link_to 'Show all users', marker_path, :class => 'btn btn-outline-primary', :remote => true %>
+
           <div class="user-info">
             <% if @current_user.present? %>
               <div class="dropdown">

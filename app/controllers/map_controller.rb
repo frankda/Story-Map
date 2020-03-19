@@ -8,5 +8,10 @@ class MapController < ApplicationController
     def create_favorite_location
         
     end
+
+    def marker
+        @comments = Comment.all
+    end
+    
     
 end

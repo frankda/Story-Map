@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   #map
   get '/storymap' => 'map#map_page'
   post '/user/favorite_location' => 'map#create_favorite_location'
+  get '/storymap/marker' => 'map#marker', :as => 'marker'
 
   #comment
   get '/comments' => 'comments#new'
