@@ -12,6 +12,11 @@
 
     <%= f.hidden_field :lng %>
 
-    <%= f.submit 'Change', :class => 'btn btn-primary text' %>
-    <%= button_to "Delete", destroy_path(@comment), :class => 'btn btn-danger', :method => 'delete' %>
+    <div class="col text-center">
+        <%= f.submit 'Change', :class => 'btn btn-primary text' %>
+    </div>
 <% end %>
+
+<div class="col text-center">
+    <%= button_to "Delete", destroy_path(@comment), :class => 'btn btn-danger delete-button', :method => 'delete', :remote => true %>
+</div>
