@@ -7,4 +7,5 @@ $('.side-form').animate({'width': '0%'}, 300)
 // Show user created comments in map pin
 createMarkerWithPopUp(current_location[0], current_location[1], `<%= @comment.content %> by <%= @comment.user.email %><br><%= link_to 'Edit', edit_comment_path(@comment), remote: true %>`, <%= @comment.id %>)
 
+// Remove popup
 mymap.removeLayer(popup);

@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
         respond_to do |format|
             if @comment.save
                 format.js
-                # format.html { redirect_to storymap_path }
             else
                 format.html { render :new }
             end
@@ -29,7 +28,6 @@ class CommentsController < ApplicationController
         @comment = Comment.find params[:id]
         respond_to do |format|
             format.js
-            # format.html { redirect_to storymap_path }
         end
     end
     

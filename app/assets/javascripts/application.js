@@ -17,24 +17,6 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-// Add user favorite location
-
-// $(document).ready(function(){
-//    $('body').on('click', '#create-favorite', function(){
-//     $.ajax({
-//         url: '/user/favorite_location',  // Try to use rails path
-//         type: 'POST',
-//         data: 'test',
-//         success: function(r){
-//             window.alert('success');
-//         },
-//         error: function(r){
-//             window.alert('fail');
-//         }
-//     });
-//    });
-// });
-
 let current_location;
 
 $(document).ready(function(){
